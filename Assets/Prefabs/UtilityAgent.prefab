@@ -42,8 +42,10 @@ GameObject:
   - component: {fileID: -4181311312825586746}
   - component: {fileID: 2736545297720282548}
   - component: {fileID: 2294265793318702323}
+  - component: {fileID: 6167597384697442447}
   - component: {fileID: 6494225523288284709}
   - component: {fileID: 6494225523288284710}
+  - component: {fileID: 4411676022999580287}
   - component: {fileID: 6494225523288284711}
   m_Layer: 0
   m_Name: UtilityAgent
@@ -82,6 +84,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
   animator: {fileID: 0}
+  perception: {fileID: 0}
+  meter: {fileID: 0}
 --- !u!114 &2736545297720282548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999703ed0e9485e4381f013aa04eac44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 2
   curve:
     serializedVersion: 2
     m_Curve:
@@ -161,6 +165,28 @@ MonoBehaviour:
     m_RotationOrder: 4
   input: 1
   decay: 0.2
+  meter: {fileID: 0}
+--- !u!114 &6167597384697442447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6494225523288284888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 999703ed0e9485e4381f013aa04eac44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  input: 1
+  decay: 0
   meter: {fileID: 0}
 --- !u!33 &6494225523288284709
 MeshFilter:
@@ -211,6 +237,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4411676022999580287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6494225523288284888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc230cb8b458b8943b1b8fd447c44764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagName: Utility
+  distance: 8
+  angle: 100
+  raycastTransform: {fileID: 9041491456245218342}
+  numRaycast: 30
+  radius: 0.4
 --- !u!136 &6494225523288284711
 CapsuleCollider:
   m_ObjectHideFlags: 0
